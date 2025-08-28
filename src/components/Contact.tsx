@@ -12,14 +12,14 @@ const Contact = () => {
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Phone",
-      info: "+966 XX XXX XXXX",
+      info: "+966 54 443 5856",
       description: "Call us during business hours",
     },
     {
       icon: <MapPin className="h-6 w-6" />,
       title: "Office",
-      info: "Riyadh, Saudi Arabia",
-      description: "Visit our creative studio",
+      info: "بيشه - شارع إمام الدعوة",
+      description: "Bisha - Imam Al-Dawa Street",
     },
   ];
 
