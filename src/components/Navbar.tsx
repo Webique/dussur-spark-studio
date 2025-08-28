@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Languages } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,12 +17,31 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
+  const openWhatsApp = () => {
+    const phoneNumber = "+966544435856";
+    const message = "Hello! I'm interested in starting a project with Dussur Advertising Agency.";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Team", href: "#team" },
-    { name: "Contact", href: "#contact" },
+    { name: t('nav.home'), id: "home" },
+    { name: t('nav.about'), id: "about" },
+    { name: t('nav.services'), id: "services" },
+    { name: t('nav.team'), id: "team" },
+    { name: t('nav.clients'), id: "clients" },
+    { name: t('nav.contact'), id: "contact" },
   ];
 
   return (
@@ -45,16 +66,25 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
-                className="text-foreground/70 hover:text-foreground transition-colors duration-300 font-medium"
+                onClick={() => scrollToSection(item.id)}
+                className="text-foreground/70 hover:text-foreground transition-colors duration-300 font-medium bg-transparent border-none cursor-pointer"
               >
                 {item.name}
-              </a>
+              </button>
             ))}
-            <Button variant="default" className="ml-4">
-              Get Started
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={toggleLanguage}
+              className="flex items-center space-x-2"
+            >
+              <Languages className="h-4 w-4" />
+              <span>{language === 'en' ? 'عربي' : 'EN'}</span>
+            </Button>
+            <Button variant="default" className="ml-4" onClick={openWhatsApp}>
+              {t('nav.getStarted')}
             </Button>
           </div>
 
@@ -79,18 +109,26 @@ const Navbar = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-background/95 backdrop-blur-md rounded-lg mt-2">
               {navItems.map((item) => (
-                <a
+                <button
                   key={item.name}
-                  href={item.href}
-                  className="block px-3 py-2 text-foreground/70 hover:text-foreground transition-colors duration-300"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => scrollToSection(item.id)}
+                  className="block w-full text-left px-3 py-2 text-foreground/70 hover:text-foreground transition-colors duration-300 bg-transparent border-none cursor-pointer"
                 >
                   {item.name}
-                </a>
+                </button>
               ))}
-              <div className="px-3 py-2">
-                <Button variant="default" className="w-full">
-                  Get Started
+              <div className="px-3 py-2 space-y-2">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={toggleLanguage}
+                  className="w-full flex items-center justify-center space-x-2"
+                >
+                  <Languages className="h-4 w-4" />
+                  <span>{language === 'en' ? 'عربي' : 'EN'}</span>
+                </Button>
+                <Button variant="default" className="w-full" onClick={openWhatsApp}>
+                  {t('nav.getStarted')}
                 </Button>
               </div>
             </div>

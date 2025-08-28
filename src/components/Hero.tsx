@@ -1,8 +1,25 @@
+import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
 
-const Hero = () => {
+export default function Hero() {
+  const { t } = useLanguage();
+
+  const openWhatsApp = () => {
+    const phoneNumber = "+966544435856";
+    const message = "Hello! I'm interested in your advertising services.";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -12,7 +29,7 @@ const Hero = () => {
           alt="Modern advertising workspace"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-hero-gradient"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
       </div>
 
       {/* Content */}
@@ -20,33 +37,36 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto">
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Transform Your
-            <span className="block text-transparent bg-clip-text bg-accent-gradient">
-              Brand Story
+            {t('hero.title')}
+            <span className="block text-3xl md:text-4xl text-white/80 font-light mt-4">
+              {t('hero.subtitle')}
             </span>
           </h1>
 
-          {/* Subtitle */}
+          {/* Description */}
           <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Dussur Advertising Agency crafts compelling narratives that elevate your brand and drive meaningful connections with your audience.
+            {t('hero.description')}
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button
+              onClick={openWhatsApp}
               size="lg"
-              className="bg-white text-primary hover:bg-white/90 shadow-elegant hover:shadow-hover transition-all duration-300 transform hover:scale-105"
+              className="bg-white text-gray-900 hover:bg-white/90 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 px-8 py-4 text-lg font-semibold"
             >
-              Start Your Project
+              {t('hero.cta.primary')}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
+            
             <Button
-              variant="secondary"
+              onClick={scrollToAbout}
+              variant="outline"
               size="lg"
-              className="shadow-elegant hover:shadow-hover transition-all duration-300"
+              className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105"
             >
               <Play className="mr-2 h-5 w-5" />
-              Watch Our Story
+              {t('hero.cta.secondary')}
             </Button>
           </div>
 
@@ -54,15 +74,15 @@ const Hero = () => {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl mx-auto">
             <div className="text-center">
               <div className="text-3xl sm:text-4xl font-bold text-white mb-2">500+</div>
-              <div className="text-white/70 text-sm uppercase tracking-wider">Projects Completed</div>
+              <div className="text-white/70 text-sm uppercase tracking-wider">{t('hero.stats.projects')}</div>
             </div>
             <div className="text-center">
               <div className="text-3xl sm:text-4xl font-bold text-white mb-2">15+</div>
-              <div className="text-white/70 text-sm uppercase tracking-wider">Years Experience</div>
+              <div className="text-white/70 text-sm uppercase tracking-wider">{t('hero.stats.years')}</div>
             </div>
             <div className="text-center">
               <div className="text-3xl sm:text-4xl font-bold text-white mb-2">50+</div>
-              <div className="text-white/70 text-sm uppercase tracking-wider">Happy Clients</div>
+              <div className="text-white/70 text-sm uppercase tracking-wider">{t('hero.stats.clients')}</div>
             </div>
           </div>
         </div>
@@ -76,6 +96,4 @@ const Hero = () => {
       </div>
     </section>
   );
-};
-
-export default Hero;
+}

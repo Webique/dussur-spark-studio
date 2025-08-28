@@ -1,46 +1,40 @@
 import { Card } from "@/components/ui/card";
-import { Megaphone, Palette, TrendingUp, Users, Camera, Globe } from "lucide-react";
-
-// Import department images
-import deptDesign from "@/assets/dept-design.jpg";
-import deptProduction from "@/assets/dept-production.jpg";
-import deptPublishing from "@/assets/dept-publishing.jpg";
-import deptMedia from "@/assets/dept-media.jpg";
-import deptMarketingStudies from "@/assets/dept-marketing-studies.jpg";
-import deptDigitalMarketing from "@/assets/dept-digital-marketing.jpg";
-import deptExhibitions from "@/assets/dept-exhibitions.jpg";
+import { Megaphone, Palette, TrendingUp, Users, Camera, Globe, Paintbrush, Factory, BookOpen, Radio, BarChart3, Smartphone, Calendar } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Services = () => {
+  const { t } = useLanguage();
+  
   const services = [
     {
       icon: <Megaphone className="h-8 w-8" />,
-      title: "Brand Strategy",
-      description: "Comprehensive brand positioning and strategic planning to establish your unique market presence.",
+      title: t('service.brandStrategy.title'),
+      description: t('service.brandStrategy.description'),
     },
     {
       icon: <Palette className="h-8 w-8" />,
-      title: "Creative Design",
-      description: "Stunning visual identities, logos, and marketing materials that capture your brand essence.",
+      title: t('service.creativeDesign.title'),
+      description: t('service.creativeDesign.description'),
     },
     {
       icon: <TrendingUp className="h-8 w-8" />,
-      title: "Digital Marketing",
-      description: "Data-driven digital campaigns across all platforms to maximize your online reach and engagement.",
+      title: t('service.digitalMarketing.title'),
+      description: t('service.digitalMarketing.description'),
     },
     {
       icon: <Users className="h-8 w-8" />,
-      title: "Social Media",
-      description: "Engaging social media strategies that build communities and foster meaningful connections.",
+      title: t('service.socialMedia.title'),
+      description: t('service.socialMedia.description'),
     },
     {
       icon: <Camera className="h-8 w-8" />,
-      title: "Content Creation",
-      description: "High-quality video, photography, and written content that tells your story effectively.",
+      title: t('service.contentCreation.title'),
+      description: t('service.contentCreation.description'),
     },
     {
       icon: <Globe className="h-8 w-8" />,
-      title: "Web Development",
-      description: "Modern, responsive websites and digital platforms that convert visitors into customers.",
+      title: t('service.webDevelopment.title'),
+      description: t('service.webDevelopment.description'),
     },
   ];
 
@@ -49,24 +43,24 @@ const Services = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Our Services
+            {t('services.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
-            We offer comprehensive advertising and marketing solutions tailored to elevate your brand and drive results.
+            {t('services.subtitle')}
           </p>
           
           {/* Values & Vision */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
             <div className="bg-primary/5 p-6 rounded-2xl text-left">
-              <h3 className="text-xl font-semibold text-primary mb-4">Our Values</h3>
+              <h3 className="text-xl font-semibold text-primary mb-4">{t('services.values.title')}</h3>
               <p className="text-muted-foreground leading-relaxed">
-                We operate with a strict framework demanding creativity while avoiding imitation. Our approach emphasizes understanding client needs through research, study, and implementation, maintaining ethical standards that align with social guidelines.
+                {t('services.values.description')}
               </p>
             </div>
             <div className="bg-accent/30 p-6 rounded-2xl text-left">
-              <h3 className="text-xl font-semibold text-primary mb-4">Our Vision</h3>
+              <h3 className="text-xl font-semibold text-primary mb-4">{t('services.vision.title')}</h3>
               <p className="text-muted-foreground leading-relaxed">
-                To work according to international standards with precise local academic vision, delivering advertising products that anticipate the future while preserving aesthetic and creative value in everything we create.
+                {t('services.vision.description')}
               </p>
             </div>
           </div>
@@ -95,25 +89,25 @@ const Services = () => {
         <div className="mt-24">
           <div className="text-center mb-16">
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Our Departments
+              {t('services.departments.title')}
             </h3>
             <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-8">
-              Dussur operates through three main parallel lines - Design, Production, and Marketing - supported by specialized departments that ensure comprehensive market analysis and competitive positioning.
+              {t('services.departments.subtitle')}
             </p>
             
             {/* Three Main Lines */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               <div className="bg-primary-gradient p-6 rounded-2xl text-primary-foreground">
-                <h4 className="text-xl font-semibold mb-2">Design</h4>
-                <p className="text-sm opacity-90">Creative conceptualization</p>
+                <h4 className="text-xl font-semibold mb-2">{t('services.mainLines.design')}</h4>
+                <p className="text-sm opacity-90">{t('dept.mainLines.design.desc')}</p>
               </div>
               <div className="bg-primary-gradient p-6 rounded-2xl text-primary-foreground">
-                <h4 className="text-xl font-semibold mb-2">Production</h4>
-                <p className="text-sm opacity-90">Quality execution</p>
+                <h4 className="text-xl font-semibold mb-2">{t('services.mainLines.production')}</h4>
+                <p className="text-sm opacity-90">{t('dept.mainLines.production.desc')}</p>
               </div>
               <div className="bg-primary-gradient p-6 rounded-2xl text-primary-foreground">
-                <h4 className="text-xl font-semibold mb-2">Marketing</h4>
-                <p className="text-sm opacity-90">Strategic positioning</p>
+                <h4 className="text-xl font-semibold mb-2">{t('services.mainLines.marketing')}</h4>
+                <p className="text-sm opacity-90">{t('dept.mainLines.marketing.desc')}</p>
               </div>
             </div>
           </div>
@@ -123,75 +117,67 @@ const Services = () => {
             <div className="absolute inset-0 bg-muted/10 rounded-2xl"></div>
             <div className="relative p-8">
               <h4 className="text-xl font-semibold text-center text-foreground mb-8">
-                Specialized Departments
+                {t('services.specialized.title')}
               </h4>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {[
                   { 
-                    name: "Design Department", 
-                    image: deptDesign, 
-                    desc: "Creative visualization & brand identity"
+                    name: t('dept.name.design'), 
+                    icon: <Paintbrush className="h-6 w-6 text-gray-600" />,
+                    desc: t('dept.design.desc')
                   },
                   { 
-                    name: "Production Department", 
-                    image: deptProduction, 
-                    desc: "Quality manufacturing & execution"
+                    name: t('dept.name.production'), 
+                    icon: <Factory className="h-6 w-6 text-gray-600" />,
+                    desc: t('dept.production.desc')
                   }, 
                   { 
-                    name: "Publishing Department", 
-                    image: deptPublishing, 
-                    desc: "Content creation & distribution"
+                    name: t('dept.name.publishing'), 
+                    icon: <BookOpen className="h-6 w-6 text-gray-600" />,
+                    desc: t('dept.publishing.desc')
                   },
                   { 
-                    name: "Media Department", 
-                    image: deptMedia, 
-                    desc: "Multimedia content & broadcasting"
+                    name: t('dept.name.media'), 
+                    icon: <Radio className="h-6 w-6 text-gray-600" />,
+                    desc: t('dept.media.desc')
                   },
                   { 
-                    name: "Marketing Studies Department", 
-                    image: deptMarketingStudies, 
-                    desc: "Market research & analysis"
+                    name: t('dept.name.marketingStudies'), 
+                    icon: <BarChart3 className="h-6 w-6 text-gray-600" />,
+                    desc: t('dept.marketing.desc')
                   },
                   { 
-                    name: "Digital Marketing Department", 
-                    image: deptDigitalMarketing, 
-                    desc: "Online presence & digital campaigns"
+                    name: t('dept.name.digitalMarketing'), 
+                    icon: <Smartphone className="h-6 w-6 text-gray-600" />,
+                    desc: t('dept.digital.desc')
                   },
                   { 
-                    name: "Exhibitions & Conferences Department", 
-                    image: deptExhibitions, 
-                    desc: "Event planning & management"
+                    name: t('dept.name.exhibitions'), 
+                    icon: <Calendar className="h-6 w-6 text-gray-600" />,
+                    desc: t('dept.exhibitions.desc')
                   }
                 ].map((dept, index) => (
-                  <div
-                    key={index}
-                    className="group relative overflow-hidden"
-                  >
-                    <div className="bg-card border border-border hover:border-border/80 transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-1 rounded-xl overflow-hidden">
-                      {/* Image Container */}
-                      <div className="relative h-32 overflow-hidden bg-muted/20">
-                        <img 
-                          src={dept.image} 
-                          alt={dept.name}
-                          className="w-full h-full object-cover opacity-80 transition-all duration-300 group-hover:opacity-100"
-                        />
-                        <div className="absolute inset-0 bg-background/20 group-hover:bg-background/10 transition-colors duration-300"></div>
-                        
-                        {/* Number Badge */}
-                        <div className="absolute top-3 right-3 w-8 h-8 bg-background/95 rounded-full flex items-center justify-center border border-border/50">
-                          <span className="text-foreground font-semibold text-xs">{index + 1}</span>
+                  <div key={index} className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
+                    {/* Header with number and icon */}
+                    <div className="flex items-center justify-between p-4 border-b border-gray-100">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+                          <span className="text-sm font-semibold text-gray-700">{index + 1}</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          {dept.icon}
+                          <h4 className="font-medium text-gray-900 text-sm">
+                            {(dept.name as string).replace(' Department', '')}
+                          </h4>
                         </div>
                       </div>
-                      
-                      {/* Content */}
-                      <div className="p-5">
-                        <h5 className="font-semibold text-foreground text-base leading-tight mb-2">
-                          {dept.name.replace(' Department', '')}
-                        </h5>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                          {dept.desc}
-                        </p>
-                      </div>
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="p-4">
+                      <p className="text-sm text-gray-600 leading-relaxed">
+                        {dept.desc}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -204,22 +190,22 @@ const Services = () => {
             <div className="inline-flex items-center space-x-4 bg-secondary/50 px-8 py-4 rounded-full">
               <div className="flex items-center space-x-2">
                 <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
-                <span className="text-sm font-medium text-foreground">Research</span>
+                <span className="text-sm font-medium text-foreground">{t('process.research')}</span>
               </div>
               <div className="w-6 h-px bg-border"></div>
               <div className="flex items-center space-x-2">
                 <div className="w-3 h-3 bg-primary rounded-full animate-pulse" style={{animationDelay: "0.5s"}}></div>
-                <span className="text-sm font-medium text-foreground">Design</span>
+                <span className="text-sm font-medium text-foreground">{t('process.design')}</span>
               </div>
               <div className="w-6 h-px bg-border"></div>
               <div className="flex items-center space-x-2">
                 <div className="w-3 h-3 bg-primary rounded-full animate-pulse" style={{animationDelay: "1s"}}></div>
-                <span className="text-sm font-medium text-foreground">Execute</span>
+                <span className="text-sm font-medium text-foreground">{t('process.execute')}</span>
               </div>
               <div className="w-6 h-px bg-border"></div>
               <div className="flex items-center space-x-2">
                 <div className="w-3 h-3 bg-primary rounded-full animate-pulse" style={{animationDelay: "1.5s"}}></div>
-                <span className="text-sm font-medium text-foreground">Deliver</span>
+                <span className="text-sm font-medium text-foreground">{t('process.deliver')}</span>
               </div>
             </div>
           </div>

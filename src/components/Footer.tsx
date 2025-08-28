@@ -1,28 +1,23 @@
-import { Facebook, Twitter, Instagram, Linkedin, Mail } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
-  const socialLinks = [
-    { icon: <Facebook className="h-5 w-5" />, href: "#", label: "Facebook" },
-    { icon: <Twitter className="h-5 w-5" />, href: "#", label: "Twitter" },
-    { icon: <Instagram className="h-5 w-5" />, href: "#", label: "Instagram" },
-    { icon: <Linkedin className="h-5 w-5" />, href: "#", label: "LinkedIn" },
-    { icon: <Mail className="h-5 w-5" />, href: "#", label: "Email" },
-  ];
-
+  const { t } = useLanguage();
+  
   const quickLinks = [
-    { name: "About Us", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Portfolio", href: "#portfolio" },
-    { name: "Contact", href: "#contact" },
+    { name: t('nav.about'), href: "#about" },
+    { name: t('nav.services'), href: "#services" },
+    { name: t('nav.team'), href: "#team" },
+    { name: t('nav.clients'), href: "#clients" },
+    { name: t('nav.contact'), href: "#contact" },
   ];
 
   const services = [
-    "Brand Strategy",
-    "Creative Design",
-    "Digital Marketing",
-    "Social Media",
-    "Content Creation",
-    "Web Development",
+    t('footer.service.brandStrategy'),
+    t('footer.service.creativeDesign'),
+    t('footer.service.digitalMarketing'),
+    t('footer.service.socialMedia'),
+    t('footer.service.contentCreation'),
+    t('footer.service.webDevelopment'),
   ];
 
   return (
@@ -40,25 +35,16 @@ const Footer = () => {
               />
             </div>
             <p className="text-primary-foreground/80 mb-6 leading-relaxed max-w-md">
-              Transforming brands through creative excellence and strategic innovation. Your vision, our expertise, extraordinary results.
+              {t('footer.description')}
             </p>
             <div className="flex space-x-4">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition-colors duration-300"
-                >
-                  {social.icon}
-                </a>
-              ))}
+              {/* Social Links removed */}
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-lg mb-6">Quick Links</h3>
+            <h3 className="font-semibold text-lg mb-6">{t('footer.quickLinks.title')}</h3>
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
@@ -75,7 +61,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold text-lg mb-6">Services</h3>
+            <h3 className="font-semibold text-lg mb-6">{t('footer.services.title')}</h3>
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
@@ -90,14 +76,14 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-primary-foreground/60 text-sm mb-4 md:mb-0">
-              © 2024 Dussur Advertising Agency. All rights reserved.
+              {t('footer.copyright')}
             </p>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors duration-300">
-                Privacy Policy
+                {t('footer.privacy')}
               </a>
               <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors duration-300">
-                Terms of Service
+                {t('footer.terms')}
               </a>
             </div>
           </div>

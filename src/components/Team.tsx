@@ -1,61 +1,31 @@
 import { Card } from "@/components/ui/card";
-import { 
-  Users, 
-  TrendingUp, 
-  Palette, 
-  PenTool, 
-  Camera, 
-  Printer, 
-  Monitor, 
-  HeadphonesIcon, 
-  UserCheck, 
-  Calculator, 
-  Phone, 
-  FileText 
-} from "lucide-react";
+import { Users, Award, Lightbulb, Target } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Team = () => {
-  const teamCategories = [
+  const { t } = useLanguage();
+  
+  const teamValues = [
     {
-      category: "Strategy & Research",
-      icon: <TrendingUp className="h-6 w-6" />,
-      roles: ["Strategic Planning Managers", "Marketing Researchers"]
+      icon: <Users className="h-8 w-8" />,
+      title: t('team.collaboration.title'),
+      description: t('team.collaboration.description'),
     },
     {
-      category: "Creative Design",
-      icon: <Palette className="h-6 w-6" />,
-      roles: ["Advertisement Designers", "Art Directors"]
+      icon: <Award className="h-8 w-8" />,
+      title: t('team.excellence.title'),
+      description: t('team.excellence.description'),
     },
     {
-      category: "Content Creation",
-      icon: <PenTool className="h-6 w-6" />,
-      roles: ["Copywriters", "Poets & Songwriters"]
+      icon: <Lightbulb className="h-8 w-8" />,
+      title: t('team.innovation.title'),
+      description: t('team.innovation.description'),
     },
     {
-      category: "Production",
-      icon: <Camera className="h-6 w-6" />,
-      roles: ["Photographers", "TV Directors", "Print Managers"]
+      icon: <Target className="h-8 w-8" />,
+      title: t('team.results.title'),
+      description: t('team.results.description'),
     },
-    {
-      category: "Media & Coordination",
-      icon: <Monitor className="h-6 w-6" />,
-      roles: ["Media Coordinators", "Publishing Coordinators"]
-    },
-    {
-      category: "Talent & Performance",
-      icon: <Users className="h-6 w-6" />,
-      roles: ["Models", "Actors", "Celebrity Collaborators"]
-    },
-    {
-      category: "Client Services",
-      icon: <HeadphonesIcon className="h-6 w-6" />,
-      roles: ["Customer Service Managers", "Account Coordinators"]
-    },
-    {
-      category: "Operations",
-      icon: <Calculator className="h-6 w-6" />,
-      roles: ["Accountants", "Public Relations", "Legal Representatives"]
-    }
   ];
 
   return (
@@ -63,52 +33,39 @@ const Team = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Our Team
+            {t('team.title')}
           </h2>
-          <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            Dussur operates as a permanent workshop with an integrated team working according to a comprehensive system whose ultimate goal is client satisfaction. Our diverse group of permanent employees and collaborators brings together expertise from every aspect of advertising and marketing.
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
+            {t('team.subtitle')}
           </p>
         </div>
 
-        {/* Team Categories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {teamCategories.map((team, index) => (
+        {/* Team Values */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          {teamValues.map((value, index) => (
             <Card
               key={index}
-              className="p-6 text-center hover:shadow-elegant transition-all duration-300 transform hover:-translate-y-1 border-border/50 bg-card/50 backdrop-blur-sm group"
+              className="p-6 text-center hover:shadow-elegant transition-all duration-300 transform hover:-translate-y-2 border-border/50 bg-card/50 backdrop-blur-sm"
             >
-              <div className="inline-flex items-center justify-center w-14 h-14 bg-primary/10 rounded-2xl mb-4 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-                {team.icon}
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary rounded-2xl mb-6 text-primary-foreground">
+                {value.icon}
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-3">
-                {team.category}
+              <h3 className="text-xl font-semibold text-foreground mb-4">
+                {value.title}
               </h3>
-              <ul className="space-y-2">
-                {team.roles.map((role, roleIndex) => (
-                  <li key={roleIndex} className="text-sm text-muted-foreground">
-                    {role}
-                  </li>
-                ))}
-              </ul>
+              <p className="text-muted-foreground leading-relaxed">
+                {value.description}
+              </p>
             </Card>
           ))}
         </div>
 
-        {/* Team Philosophy */}
-        <div className="mt-16 text-center">
-          <div className="bg-primary-gradient p-8 rounded-3xl text-primary-foreground max-w-4xl mx-auto">
-            <h3 className="text-2xl font-semibold mb-4">One Team, One Vision</h3>
-            <p className="text-lg leading-relaxed opacity-90">
-              From strategic planners to creative directors, from photographers to media coordinators – every member of our integrated team works toward the same goal: delivering exceptional results that exceed client expectations and drive meaningful business success.
+        {/* Team Description */}
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="bg-primary/5 p-8 rounded-2xl">
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              {t('team.description')}
             </p>
-          </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center mt-12">
-          <div className="inline-flex items-center space-x-2 text-muted-foreground">
-            <UserCheck className="h-5 w-5" />
-            <span className="font-medium">Ready to work with our expert team?</span>
           </div>
         </div>
       </div>
