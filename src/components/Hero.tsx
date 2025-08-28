@@ -41,9 +41,9 @@ const Hero = () => {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button
-              variant="outline"
+              variant="secondary"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-primary backdrop-blur-sm shadow-lg"
+              className="shadow-elegant hover:shadow-hover transition-all duration-300"
             >
               <Play className="mr-2 h-5 w-5" />
               Watch Our Story
