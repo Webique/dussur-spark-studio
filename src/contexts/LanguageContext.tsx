@@ -23,7 +23,7 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState<Language>('ar');
 
   useEffect(() => {
     // Update document direction based on language
@@ -38,9 +38,8 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   const translations = {
     en: {
       // Hero Section
-      'hero.title.line1': 'Transform Your',
-      'hero.title.line2': 'Brand Story',
-      'hero.subtitle': 'Dussur Advertising Agency crafts compelling narratives that elevate your brand and drive meaningful connections with your audience.',
+              'hero.title': 'Dussur Foundation for Conference Organization, Marketing and Advertising',
+              'hero.subtitle': 'We create impactful stories that reflect your brand identity, and innovate creative solutions that enhance your presence and build effective communication bridges with your audience. With our expertise in conference organization, marketing, advertising campaigns, and visual identity and print design, we give your brand the excellence it deserves',
       'hero.startProject': 'Start Your Project',
       'hero.watchStory': 'Watch Our Story',
       'hero.stats.projects': 'Projects Completed',
@@ -48,18 +47,32 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
       'hero.stats.clients': 'Happy Clients',
 
       // About Section
-      'about.quote': '"If any company wants to soar in the business world, its two wings are Marketing and Advertising"',
-      'about.quoteAuthor': '— J. Lawrence, Professor of Visual Communication, University of California',
-      'about.title': 'About Dussur',
-      'about.description1': 'Founded in 1422 Hijri (2001) by a group of ambitious young professionals and academics united by one dream, Dussur began as an advertising and visual communication company and has evolved into a comprehensive marketing research center.',
-      'about.description2': 'We reshape commercial concepts from an aesthetic and creative perspective, drawing from our deep understanding of local markets while applying global expertise. Our integrated team operates as true partners in your success, delivering solutions that combine strategic thinking with artistic excellence.',
-      'about.learnMore': 'Learn More About Us',
-      'about.achievements': [
-        'Complete advertising solutions - print, audio & visual',
-        'Corporate identity creation & rebranding',
-        'Marketing research & local market analysis',
-        'Conference & seminar organization',
-      ],
+        about: {
+          title: 'من نحن',
+          titleEn: 'Who We Are',
+          description1: 'تأسست دسر مطلع عام 1422هـ على يد مجموعة من الشباب الطموحين والأكاديميين الذين جمعهم حلم صناعة التميز في عالم الدعاية والإعلان. بخبرةٍ تراكمية تجاوزت 17 عامًا، انطلقت دسر لتضع بصمتها في مجال الاتصال البصري والبحوث التسويقية، مستندة إلى خبرات عالمية وكفاءات وطنية قادرة على قراءة السوق المحلية بذكاء واحترافية.',
+          description1En: 'Dusr was founded in early 1422 AH by a group of ambitious young professionals and academics united by a dream of creating excellence in the world of advertising and marketing. With over 17 years of accumulated experience, Dusr set out to leave its mark in visual communication and marketing research, drawing on international expertise and national talent capable of understanding the local market with intelligence and professionalism.',
+          description2: 'ومع تطور أعمالها واتساع آفاقها، أصبحت دسر علامة بارزة وشريكًا استراتيجيًا للعديد من الجهات والمؤسسات، حيث تقدم باقة متكاملة من الخدمات تشمل:',
+          description2En: 'As our work grew and our horizons expanded, Dusr became a distinguished name and a strategic partner for many organizations and institutions, offering a comprehensive range of services, including:',
+          services: [
+            'تنظيم المعارض والمؤتمرات',
+            'التسويق الذكي وحملات الدعاية والإعلان',
+            'تصميم وإخراج المطبوعات والمجلات',
+            'إنتاج الإعلانات المقروءة، المسموعة، والمرئية',
+            'ابتكار الهويات البصرية وإعادة بنائها وتطويرها'
+          ],
+          servicesEn: [
+            'Organizing exhibitions and conferences',
+            'Smart marketing and advertising campaigns',
+            'Designing and producing publications and magazines',
+            'Producing print, audio, and visual advertisements',
+            'Creating, rebuilding, and developing visual identities'
+          ],
+          description3: 'في دسر، نؤمن أن الإبداع ليس خيارًا بل هوية، وأن نجاح عملائنا هو نجاحنا الحقيقي، لذا نواصل رحلتنا لنكون الوجهة الأولى لكل من يسعى إلى التأثير والتميز في عالم الاتصال والإعلام',
+          description3En: 'At Dusr, we believe that creativity is not an option but an identity, and that the success of our clients is our true success. That is why we continue our journey to be the first destination for everyone seeking influence and excellence in the world of communication and media.',
+          buttonText: 'تعرف علينا أكثر',
+          buttonTextEn: 'Learn More About Us'
+        },
 
       // Services Section
       'services.title': 'Our Services',
@@ -101,7 +114,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
       'footer.description': 'Transforming brands through creative excellence and strategic innovation. Your vision, our expertise, extraordinary results.',
       'footer.quickLinks.title': 'Quick Links',
       'footer.services.title': 'Services',
-      'footer.copyright': '© 2024 Dussur Advertising Agency. All rights reserved.',
+              'footer.copyright': '© 2024 Dussur Foundation for Conference Organization, Marketing and Advertising. All rights reserved.',
       'footer.privacy': 'Privacy Policy',
       'footer.terms': 'Terms of Service',
 
@@ -116,9 +129,8 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     },
     ar: {
       // Hero Section
-      'hero.title.line1': 'حول قصتك',
-      'hero.title.line2': 'العلامة التجارية',
-      'hero.subtitle': 'تقوم وكالة دسر الإعلانية بصياغة قصص مقنعة ترفع من علامتك التجارية وتقود اتصالات هادفة مع جمهورك.',
+              'hero.title': 'مؤسسة دُسُر لتنظيم المؤتمرات والدعاية والإعلان',
+              'hero.subtitle': 'نحن نصنع قصصًا مؤثرة تعكس هوية علامتك التجارية، ونبتكر حلولًا إبداعية تعزز حضورك وتبني جسور تواصل فعّالة مع جمهورك. بخبراتنا في تنظيم المؤتمرات، التسويق، الحملات الإعلانية، وتصميم الهويات البصرية والمطبوعات، نمنح علامتك التميز الذي تستحقه',
       'hero.startProject': 'ابدأ مشروعك',
       'hero.watchStory': 'شاهد قصتنا',
       'hero.stats.projects': 'مشروع مكتمل',
@@ -126,18 +138,9 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
       'hero.stats.clients': 'عميل سعيد',
 
       // About Section
-      'about.quote': '"إن أرادت شركة ما أن تحلق في عالم الأعمال، فجناحاها التسويق والإعلان"',
-      'about.quoteAuthor': '— قال ج. لورنس، بروفسور الإتصال البصري في جامعة كاليفورنيا',
       'about.title': 'من نحن',
-      'about.description1': 'تأسست دسر بداية العام 1422 هجرية، من مجموعة شباب طموحين وأكاديميين يجمعهم حلماً واحداً، الأمر الذي كان البذرة الأولى لانطلاق أعمالها كشركة دعاية وإعلان واتصال بصري، لتتطور فيما بعد وتصبح مركز بحوث تسويقية يتم فيه دراسة السوق المحلية انطلاقاً من الخبرات العالمية لكوادرها في هذا المجال.',
-      'about.description2': 'ومع ازدياد حجم أعمالها، توسعت دسر لتشمل كل قطاعات الإعلان وخدماته المتصلة به من تصميم وتنفيذ الإعلانات بكافة أنواعها، المقروءة والمسموعة والمصورة وعرضها بكل الوسائل المتاحة. الورقية وقنوات الإعلام، كما أنها مختصة بإبداع هوية للشركات وإعادة بناء هويتها وتحديث شخصية المؤسسات القائمة.',
-      'about.learnMore': 'اعرف المزيد عنا',
-      'about.achievements': [
-        'حلول إعلانية متكاملة - مطبوعة ومسموعة ومرئية',
-        'إنشاء الهوية المؤسسية وإعادة بناء العلامة التجارية',
-        'البحوث التسويقية وتحليل السوق المحلي',
-        'تنظيم المؤتمرات والندوات',
-      ],
+      
+      'about.buttonText': 'تعرف علينا أكثر',
 
       // Services Section
       'services.title': 'خدماتنا',
@@ -179,7 +182,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
       'footer.description': 'نحول العلامات التجارية من خلال التميز الإبداعي والابتكار الاستراتيجي. رؤيتك، خبرتنا، نتائج استثنائية.',
       'footer.quickLinks.title': 'روابط سريعة',
       'footer.services.title': 'الخدمات',
-      'footer.copyright': '© 2024 وكالة دسر الإعلانية. جميع الحقوق محفوظة.',
+              'footer.copyright': '© 2024 مؤسسة دُسُر لتنظيم المؤتمرات والدعاية والإعلان. جميع الحقوق محفوظة.',
       'footer.privacy': 'سياسة الخصوصية',
       'footer.terms': 'شروط الخدمة',
 
@@ -253,14 +256,11 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     if (key === 'nav.getStarted') {
       return language === 'en' ? 'Get Started' : 'ابدأ الآن';
     }
-    if (key === 'hero.title.line1') {
-      return language === 'en' ? 'Transform Your' : 'حول قصتك';
-    }
-    if (key === 'hero.title.line2') {
-      return language === 'en' ? 'Brand Story' : 'العلامة التجارية';
+    if (key === 'hero.title') {
+      return language === 'en' ? 'Dussur Foundation for Conference Organization, Marketing and Advertising' : 'مؤسسة دُسُر لتنظيم المؤتمرات والدعاية والإعلان';
     }
     if (key === 'hero.subtitle') {
-      return language === 'en' ? 'Dussur Advertising Agency crafts compelling narratives that elevate your brand and drive meaningful connections with your audience.' : 'تقوم وكالة دسر الإعلانية بصياغة قصص مقنعة ترفع من علامتك التجارية وتقود اتصالات هادفة مع جمهورك.';
+      return language === 'en' ? 'We create impactful stories that reflect your brand identity, and innovate creative solutions that enhance your presence and build effective communication bridges with your audience. With our expertise in conference organization, marketing, advertising campaigns, and visual identity and print design, we give your brand the excellence it deserves' : 'نحن نصنع قصصًا مؤثرة تعكس هوية علامتك التجارية، ونبتكر حلولًا إبداعية تعزز حضورك وتبني جسور تواصل فعّالة مع جمهورك. بخبراتنا في تنظيم المؤتمرات، التسويق، الحملات الإعلانية، وتصميم الهويات البصرية والمطبوعات، نمنح علامتك التميز الذي تستحقه';
     }
     if (key === 'hero.startProject') {
       return language === 'en' ? 'Start Your Project' : 'ابدأ مشروعك';
@@ -269,36 +269,37 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
       return language === 'en' ? 'Watch Our Story' : 'شاهد قصتنا';
     }
     if (key === 'about.title') {
-      return language === 'en' ? 'About Dussur' : 'من نحن';
-    }
-    if (key === 'about.quote') {
-      return language === 'en' ? '"If any company wants to soar in the business world, its two wings are Marketing and Advertising"' : '"إن أرادت شركة ما أن تحلق في عالم الأعمال، فجناحاها التسويق والإعلان"';
-    }
-    if (key === 'about.quoteAuthor') {
-      return language === 'en' ? '— J. Lawrence, Professor of Visual Communication, University of California' : '— قال ج. لورنس، بروفسور الإتصال البصري في جامعة كاليفورنيا';
+      return language === 'en' ? 'Who We Are' : 'من نحن';
     }
     if (key === 'about.description1') {
-      return language === 'en' ? 'Founded in 1422 Hijri (2001) by a group of ambitious young professionals and academics united by one dream, Dussur began as an advertising and visual communication company and has evolved into a comprehensive marketing research center.' : 'تأسست دسر بداية العام 1422 هجرية، من مجموعة شباب طموحين وأكاديميين يجمعهم حلماً واحداً، الأمر الذي كان البذرة الأولى لانطلاق أعمالها كشركة دعاية وإعلان واتصال بصري، لتتطور فيما بعد وتصبح مركز بحوث تسويقية يتم فيه دراسة السوق المحلية انطلاقاً من الخبرات العالمية لكوادرها في هذا المجال.';
+      return language === 'en' ? 'Dusr was founded in early 1422 AH by a group of ambitious young professionals and academics united by a dream of creating excellence in the world of advertising and marketing. With over 17 years of accumulated experience, Dusr set out to leave its mark in visual communication and marketing research, drawing on international expertise and national talent capable of understanding the local market with intelligence and professionalism.' : 'تأسست دسر مطلع عام 1422هـ على يد مجموعة من الشباب الطموحين والأكاديميين الذين جمعهم حلم صناعة التميز في عالم الدعاية والإعلان. بخبرةٍ تراكمية تجاوزت 17 عامًا، انطلقت دسر لتضع بصمتها في مجال الاتصال البصري والبحوث التسويقية، مستندة إلى خبرات عالمية وكفاءات وطنية قادرة على قراءة السوق المحلية بذكاء واحترافية.';
     }
     if (key === 'about.description2') {
-      return language === 'en' ? 'We reshape commercial concepts from an aesthetic and creative perspective, drawing from our deep understanding of local markets while applying global expertise. Our integrated team operates as true partners in your success, delivering solutions that combine strategic thinking with artistic excellence.' : 'ومع ازدياد حجم أعمالها، توسعت دسر لتشمل كل قطاعات الإعلان وخدماته المتصلة به من تصميم وتنفيذ الإعلانات بكافة أنواعها، المقروءة والمسموعة والمصورة وعرضها بكل الوسائل المتاحة. الورقية وقنوات الإعلام، كما أنها مختصة بإبداع هوية للشركات وإعادة بناء هويتها وتحديث شخصية المؤسسات القائمة.';
+      return language === 'en' ? 'As our work grew and our horizons expanded, Dusr became a distinguished name and a strategic partner for many organizations and institutions, offering a comprehensive range of services, including:' : 'ومع تطور أعمالها واتساع آفاقها، أصبحت دسر علامة بارزة وشريكًا استراتيجيًا للعديد من الجهات والمؤسسات، حيث تقدم باقة متكاملة من الخدمات تشمل:';
     }
-    if (key === 'about.learnMore') {
-      return language === 'en' ? 'Learn More About Us' : 'اعرف المزيد عنا';
-    }
-    if (key === 'about.achievements') {
+    if (key === 'about.services') {
       return language === 'en' ? [
-        'Complete advertising solutions - print, audio & visual',
-        'Corporate identity creation & rebranding',
-        'Marketing research & local market analysis',
-        'Conference & seminar organization',
+        'Organizing exhibitions and conferences',
+        'Smart marketing and advertising campaigns',
+        'Designing and producing publications and magazines',
+        'Producing print, audio, and visual advertisements',
+        'Creating, rebuilding, and developing visual identities'
       ] : [
-        'حلول إعلانية متكاملة - مطبوعة ومسموعة ومرئية',
-        'إنشاء الهوية المؤسسية وإعادة بناء العلامة التجارية',
-        'البحوث التسويقية وتحليل السوق المحلي',
-        'تنظيم المؤتمرات والندوات',
+        'تنظيم المعارض والمؤتمرات',
+        'التسويق الذكي وحملات الدعاية والإعلان',
+        'تصميم وإخراج المطبوعات والمجلات',
+        'إنتاج الإعلانات المقروءة، المسموعة، والمرئية',
+        'ابتكار الهويات البصرية وإعادة بنائها وتطويرها'
       ];
     }
+    if (key === 'about.description3') {
+      return language === 'en' ? 'At Dusr, we believe that creativity is not an option but an identity, and that the success of our clients is our true success. That is why we continue our journey to be the first destination for everyone seeking influence and excellence in the world of communication and media.' : 'في دسر، نؤمن أن الإبداع ليس خيارًا بل هوية، وأن نجاح عملائنا هو نجاحنا الحقيقي، لذا نواصل رحلتنا لنكون الوجهة الأولى لكل من يسعى إلى التأثير والتميز في عالم الاتصال والإعلام';
+    }
+    if (key === 'about.buttonText') {
+      return language === 'en' ? 'Learn More About Us' : 'تعرف علينا أكثر';
+    }
+
+
     if (key === 'hero.stats.projects') {
       return language === 'en' ? 'Projects Completed' : 'مشروع مكتمل';
     }
@@ -411,7 +412,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
       return language === 'en' ? 'Services' : 'الخدمات';
     }
     if (key === 'footer.copyright') {
-      return language === 'en' ? '© 2024 Dussur Advertising Agency. All rights reserved.' : '© 2024 وكالة دسر الإعلانية. جميع الحقوق محفوظة.';
+              return language === 'en' ? '© 2024 Dussur Foundation for Conference Organization, Marketing and Advertising. All rights reserved.' : '© 2024 مؤسسة دُسُر لتنظيم المؤتمرات والدعاية والإعلان. جميع الحقوق محفوظة.';
     }
     if (key === 'footer.privacy') {
       return language === 'en' ? 'Privacy Policy' : 'سياسة الخصوصية';
@@ -564,23 +565,16 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
       return language === 'en' ? 'Exhibitions & Conferences Department' : 'قسم المعارض والمؤتمرات';
     }
     if (key === 'hero.title') {
-      return language === 'en' ? 'Dussur Advertising Agency' : 'وكالة دسر الإعلانية';
+              return language === 'en' ? 'Dussur Foundation for Conference Organization, Marketing and Advertising' : 'مؤسسة دُسُر لتنظيم المؤتمرات والدعاية والإعلان';
     }
     if (key === 'hero.subtitle') {
       return language === 'en' ? 'Modern advertising workspace' : 'مساحة عمل إعلانية حديثة';
     }
-    if (key === 'hero.description') {
-      return language === 'en' ? 'We craft compelling stories that elevate your brand and drive meaningful connections.' : 'نحن نصوغ قصصاً مقنعة ترفع من علامتك التجارية وتقود اتصالات هادفة.';
-    }
+    
     if (key === 'hero.badge') {
       return language === 'en' ? 'Leading Advertising Agency' : 'وكالة إعلانية رائدة';
     }
-    if (key === 'hero.cta.primary') {
-      return language === 'en' ? 'Start Your Project' : 'ابدأ مشروعك';
-    }
-    if (key === 'hero.cta.secondary') {
-      return language === 'en' ? 'Watch Our Story' : 'شاهد قصتنا';
-    }
+
     if (key === 'hero.stats.projects') {
       return language === 'en' ? 'Completed Projects' : 'مشروع مكتمل';
     }

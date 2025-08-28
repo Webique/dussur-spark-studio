@@ -36,17 +36,16 @@ export default function Hero() {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Main Heading */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 md:mb-6 leading-tight">
-            {t('hero.title')}
-            <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white/80 font-light mt-2 md:mt-4">
+          <div className="text-center mb-8">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              {t('hero.title')}
+            </h1>
+            <p className="text-lg md:text-xl lg:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
               {t('hero.subtitle')}
-            </span>
-          </h1>
+            </p>
+          </div>
 
-          {/* Description */}
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed px-2">
-            {t('hero.description')}
-          </p>
+
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-8 md:mb-12 px-4">
@@ -55,7 +54,7 @@ export default function Hero() {
               size="lg"
               className="w-full sm:w-auto bg-white text-gray-900 hover:bg-white/90 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold rounded-lg"
             >
-              {t('hero.cta.primary')}
+              {t('hero.startProject')}
               <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
             </Button>
             
@@ -66,7 +65,7 @@ export default function Hero() {
               className="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold transition-all duration-300 hover:scale-105 rounded-lg"
             >
               <Play className="mr-2 h-4 w-4 md:h-5 md:w-5" />
-              {t('hero.cta.secondary')}
+              {t('hero.watchStory')}
             </Button>
           </div>
 

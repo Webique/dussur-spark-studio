@@ -33,11 +33,9 @@ export default function Navbar() {
   };
 
   const navItems = [
-    { id: 'home', name: t('nav.home') },
-    { id: 'about', name: t('nav.about') },
-    { id: 'services', name: t('nav.services') },
-    { id: 'team', name: t('nav.team') },
-    { id: 'contact', name: t('nav.contact') },
+    { id: 'about', name: language === 'en' ? 'Who We Are' : 'من نحن' },
+    { id: 'services', name: language === 'en' ? 'Our Departments' : 'أقسامنا' },
+    { id: 'contact', name: language === 'en' ? 'Contact' : 'اتصل بنا' },
   ];
 
   return (

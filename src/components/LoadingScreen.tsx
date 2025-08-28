@@ -50,10 +50,10 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
         {/* Logo/Title */}
         <div className="text-center mb-8 md:mb-12">
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-black mb-3 md:mb-4">
-            وكالة دسر الإعلانية
+            مؤسسة دُسُر لتنظيم المؤتمرات والدعاية والإعلان
           </h1>
           <h2 className="text-lg sm:text-xl md:text-3xl font-light text-gray-700 mb-2 md:mb-3">
-            Dussur Advertising Agency
+            Dussur Foundation for Conference Organization, Marketing and Advertising
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-gray-500">
             حملنه على ذات ألواح و دسر
