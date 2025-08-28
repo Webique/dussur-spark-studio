@@ -42,9 +42,25 @@ const Services = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
             Our Services
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
             We offer comprehensive advertising and marketing solutions tailored to elevate your brand and drive results.
           </p>
+          
+          {/* Values & Vision */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+            <div className="bg-primary/5 p-6 rounded-2xl text-left">
+              <h3 className="text-xl font-semibold text-primary mb-4">Our Values</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                We operate with a strict framework demanding creativity while avoiding imitation. Our approach emphasizes understanding client needs through research, study, and implementation, maintaining ethical standards that align with social guidelines.
+              </p>
+            </div>
+            <div className="bg-accent/30 p-6 rounded-2xl text-left">
+              <h3 className="text-xl font-semibold text-primary mb-4">Our Vision</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                To work according to international standards with precise local academic vision, delivering advertising products that anticipate the future while preserving aesthetic and creative value in everything we create.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
