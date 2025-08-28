@@ -12,7 +12,7 @@ const About = () => {
   return (
     <section id="about" className="py-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-4xl mx-auto">
           {/* Content */}
           <div>
             {/* Quote */}
@@ -49,22 +49,6 @@ const About = () => {
               Learn More About Us
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-          </div>
-
-          {/* Image/Visual Element */}
-          <div className="relative">
-            <div className="aspect-square bg-accent-gradient rounded-3xl p-8 shadow-elegant">
-              <div className="h-full bg-primary-gradient rounded-2xl flex items-center justify-center">
-                <div className="text-center text-primary-foreground">
-                  <div className="text-6xl font-bold mb-4">20+</div>
-                  <div className="text-xl font-medium mb-2">Years of Excellence</div>
-                  <div className="text-sm opacity-80">Since 1422H / 2001</div>
-                </div>
-              </div>
-            </div>
-            {/* Floating elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-accent rounded-full opacity-20"></div>
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/10 rounded-full"></div>
           </div>
         </div>
       </div>
