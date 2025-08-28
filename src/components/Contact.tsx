@@ -1,8 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 const Contact = () => {
   const contactInfo = [
@@ -40,7 +37,7 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Information */}
-          <div className="space-y-6">
+          <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6">
             {contactInfo.map((item, index) => (
               <Card key={index} className="p-6 border-border/50 bg-card/50 backdrop-blur-sm">
                 <div className="flex items-start">
@@ -55,68 +52,6 @@ const Contact = () => {
                 </div>
               </Card>
             ))}
-          </div>
-
-          {/* Contact Form */}
-          <div className="lg:col-span-2">
-            <Card className="p-8 border-border/50 bg-card/50 backdrop-blur-sm">
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                      Name
-                    </label>
-                    <Input
-                      id="name"
-                      type="text"
-                      placeholder="Your name"
-                      className="border-border/50 focus:border-primary"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                      Email
-                    </label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="your@email.com"
-                      className="border-border/50 focus:border-primary"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
-                    Subject
-                  </label>
-                  <Input
-                    id="subject"
-                    type="text"
-                    placeholder="Project inquiry"
-                    className="border-border/50 focus:border-primary"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                    Message
-                  </label>
-                  <Textarea
-                    id="message"
-                    rows={6}
-                    placeholder="Tell us about your project..."
-                    className="border-border/50 focus:border-primary resize-none"
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="w-full shadow-elegant hover:shadow-hover transition-all duration-300"
-                >
-                  Send Message
-                  <Send className="ml-2 h-5 w-5" />
-                </Button>
-              </form>
-            </Card>
           </div>
         </div>
       </div>
