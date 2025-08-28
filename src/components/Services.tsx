@@ -120,112 +120,81 @@ const Services = () => {
 
           {/* Specialized Departments */}
           <div className="relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-primary/5 rounded-3xl"></div>
-            <div className="relative p-8 lg:p-12">
-              <h4 className="text-2xl font-bold text-center text-foreground mb-12">
+            <div className="absolute inset-0 bg-muted/10 rounded-2xl"></div>
+            <div className="relative p-8">
+              <h4 className="text-xl font-semibold text-center text-foreground mb-8">
                 Specialized Departments
               </h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {[
                   { 
                     name: "Design Department", 
                     image: deptDesign, 
-                    desc: "Creative visualization & brand identity",
-                    color: "from-blue-500/20 to-purple-500/20"
+                    desc: "Creative visualization & brand identity"
                   },
                   { 
                     name: "Production Department", 
                     image: deptProduction, 
-                    desc: "Quality manufacturing & execution",
-                    color: "from-orange-500/20 to-red-500/20"
+                    desc: "Quality manufacturing & execution"
                   }, 
                   { 
                     name: "Publishing Department", 
                     image: deptPublishing, 
-                    desc: "Content creation & distribution",
-                    color: "from-green-500/20 to-emerald-500/20"
+                    desc: "Content creation & distribution"
                   },
                   { 
                     name: "Media Department", 
                     image: deptMedia, 
-                    desc: "Multimedia content & broadcasting",
-                    color: "from-pink-500/20 to-rose-500/20"
+                    desc: "Multimedia content & broadcasting"
                   },
                   { 
                     name: "Marketing Studies Department", 
                     image: deptMarketingStudies, 
-                    desc: "Market research & analysis",
-                    color: "from-cyan-500/20 to-blue-500/20"
+                    desc: "Market research & analysis"
                   },
                   { 
                     name: "Digital Marketing Department", 
                     image: deptDigitalMarketing, 
-                    desc: "Online presence & digital campaigns",
-                    color: "from-violet-500/20 to-purple-500/20"
+                    desc: "Online presence & digital campaigns"
                   },
                   { 
                     name: "Exhibitions & Conferences Department", 
                     image: deptExhibitions, 
-                    desc: "Event planning & management",
-                    color: "from-yellow-500/20 to-orange-500/20"
+                    desc: "Event planning & management"
                   }
                 ].map((dept, index) => (
                   <div
                     key={index}
                     className="group relative overflow-hidden"
                   >
-                    <div className="bg-card/90 backdrop-blur-sm rounded-2xl border border-border/50 hover:border-primary/30 transition-all duration-500 group-hover:shadow-elegant group-hover:-translate-y-2 overflow-hidden">
+                    <div className="bg-card border border-border hover:border-border/80 transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-1 rounded-xl overflow-hidden">
                       {/* Image Container */}
-                      <div className="relative h-40 overflow-hidden">
-                        <div className={`absolute inset-0 bg-gradient-to-br ${dept.color} opacity-60`}></div>
+                      <div className="relative h-32 overflow-hidden bg-muted/20">
                         <img 
                           src={dept.image} 
                           alt={dept.name}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          className="w-full h-full object-cover opacity-80 transition-all duration-300 group-hover:opacity-100"
                         />
-                        <div className="absolute inset-0 bg-primary/10 group-hover:bg-primary/20 transition-colors duration-500"></div>
+                        <div className="absolute inset-0 bg-background/20 group-hover:bg-background/10 transition-colors duration-300"></div>
                         
                         {/* Number Badge */}
-                        <div className="absolute top-4 right-4 w-10 h-10 bg-background/90 backdrop-blur-sm rounded-full flex items-center justify-center border border-primary/20">
-                          <span className="text-primary font-bold text-sm">{index + 1}</span>
+                        <div className="absolute top-3 right-3 w-8 h-8 bg-background/95 rounded-full flex items-center justify-center border border-border/50">
+                          <span className="text-foreground font-semibold text-xs">{index + 1}</span>
                         </div>
                       </div>
                       
                       {/* Content */}
-                      <div className="p-6">
-                        <h5 className="font-semibold text-foreground text-lg leading-tight mb-3 group-hover:text-primary transition-colors duration-300">
+                      <div className="p-5">
+                        <h5 className="font-semibold text-foreground text-base leading-tight mb-2">
                           {dept.name.replace(' Department', '')}
                         </h5>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           {dept.desc}
                         </p>
                       </div>
-                      
-                      {/* Hover Effect Overlay */}
-                      <div className="absolute inset-0 bg-primary-gradient opacity-0 group-hover:opacity-5 transition-opacity duration-500 pointer-events-none"></div>
                     </div>
                   </div>
                 ))}
-              </div>
-              
-              {/* Connecting Lines Animation */}
-              <div className="hidden lg:block absolute inset-0 pointer-events-none">
-                <svg className="w-full h-full opacity-10">
-                  <defs>
-                    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="currentColor" stopOpacity="0"/>
-                      <stop offset="50%" stopColor="currentColor" stopOpacity="0.5"/>
-                      <stop offset="100%" stopColor="currentColor" stopOpacity="0"/>
-                    </linearGradient>
-                  </defs>
-                  <path 
-                    d="M 100 200 Q 300 150 500 200 T 900 200" 
-                    stroke="url(#lineGradient)" 
-                    strokeWidth="2" 
-                    fill="none"
-                    className="animate-pulse"
-                  />
-                </svg>
               </div>
             </div>
           </div>
