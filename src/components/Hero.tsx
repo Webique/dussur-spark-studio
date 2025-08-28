@@ -43,7 +43,7 @@ const Hero = () => {
             <Button
               variant="outline"
               size="lg"
-              className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
+              className="border-white text-white hover:bg-white hover:text-primary backdrop-blur-sm shadow-lg"
             >
               <Play className="mr-2 h-5 w-5" />
               Watch Our Story
