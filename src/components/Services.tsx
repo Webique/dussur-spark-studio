@@ -84,37 +84,95 @@ const Services = () => {
 
         {/* Our Departments */}
         <div className="mt-24">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
+          <div className="text-center mb-16">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6">
               Our Departments
             </h3>
-            <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-8">
               Dussur operates through three main parallel lines - Design, Production, and Marketing - supported by specialized departments that ensure comprehensive market analysis and competitive positioning.
             </p>
+            
+            {/* Three Main Lines */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+              <div className="bg-primary-gradient p-6 rounded-2xl text-primary-foreground">
+                <h4 className="text-xl font-semibold mb-2">Design</h4>
+                <p className="text-sm opacity-90">Creative conceptualization</p>
+              </div>
+              <div className="bg-primary-gradient p-6 rounded-2xl text-primary-foreground">
+                <h4 className="text-xl font-semibold mb-2">Production</h4>
+                <p className="text-sm opacity-90">Quality execution</p>
+              </div>
+              <div className="bg-primary-gradient p-6 rounded-2xl text-primary-foreground">
+                <h4 className="text-xl font-semibold mb-2">Marketing</h4>
+                <p className="text-sm opacity-90">Strategic positioning</p>
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              "Design Department",
-              "Production Department", 
-              "Publishing Department",
-              "Media Department",
-              "Marketing Studies Department",
-              "Digital Marketing Department",
-              "Exhibitions & Conferences Department"
-            ].map((dept, index) => (
-              <div
-                key={index}
-                className="bg-primary/5 p-6 rounded-xl text-center border border-primary/10 hover:border-primary/20 transition-all duration-300 group"
-              >
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors duration-300">
-                  <span className="text-primary font-bold text-lg">{index + 1}</span>
-                </div>
-                <h4 className="font-semibold text-foreground text-sm leading-tight">
-                  {dept}
-                </h4>
+          {/* Specialized Departments */}
+          <div className="relative">
+            <div className="absolute inset-0 bg-accent-gradient opacity-5 rounded-3xl"></div>
+            <div className="relative p-8">
+              <h4 className="text-xl font-semibold text-center text-foreground mb-8">
+                Specialized Departments
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {[
+                  { name: "Design Department", icon: "🎨", desc: "Creative visualization & brand identity" },
+                  { name: "Production Department", icon: "⚙️", desc: "Quality manufacturing & execution" }, 
+                  { name: "Publishing Department", icon: "📚", desc: "Content creation & distribution" },
+                  { name: "Media Department", icon: "📺", desc: "Multimedia content & broadcasting" },
+                  { name: "Marketing Studies Department", icon: "📊", desc: "Market research & analysis" },
+                  { name: "Digital Marketing Department", icon: "💻", desc: "Online presence & digital campaigns" },
+                  { name: "Exhibitions & Conferences Department", icon: "🎪", desc: "Event planning & management" }
+                ].map((dept, index) => (
+                  <div
+                    key={index}
+                    className="bg-card/80 backdrop-blur-sm p-6 rounded-xl border border-border/50 hover:border-primary/30 transition-all duration-300 group hover:shadow-elegant hover:-translate-y-1"
+                  >
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/30 transition-colors duration-300">
+                        <span className="text-2xl">{dept.icon}</span>
+                      </div>
+                      <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/20 transition-colors duration-300">
+                        <span className="text-primary font-bold text-sm">{index + 1}</span>
+                      </div>
+                      <h5 className="font-semibold text-foreground text-sm leading-tight mb-2">
+                        {dept.name}
+                      </h5>
+                      <p className="text-xs text-muted-foreground leading-relaxed">
+                        {dept.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+          </div>
+
+          {/* Process Flow */}
+          <div className="mt-16 text-center">
+            <div className="inline-flex items-center space-x-4 bg-secondary/50 px-8 py-4 rounded-full">
+              <div className="flex items-center space-x-2">
+                <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+                <span className="text-sm font-medium text-foreground">Research</span>
+              </div>
+              <div className="w-6 h-px bg-border"></div>
+              <div className="flex items-center space-x-2">
+                <div className="w-3 h-3 bg-primary rounded-full animate-pulse" style={{animationDelay: "0.5s"}}></div>
+                <span className="text-sm font-medium text-foreground">Design</span>
+              </div>
+              <div className="w-6 h-px bg-border"></div>
+              <div className="flex items-center space-x-2">
+                <div className="w-3 h-3 bg-primary rounded-full animate-pulse" style={{animationDelay: "1s"}}></div>
+                <span className="text-sm font-medium text-foreground">Execute</span>
+              </div>
+              <div className="w-6 h-px bg-border"></div>
+              <div className="flex items-center space-x-2">
+                <div className="w-3 h-3 bg-primary rounded-full animate-pulse" style={{animationDelay: "1.5s"}}></div>
+                <span className="text-sm font-medium text-foreground">Deliver</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
