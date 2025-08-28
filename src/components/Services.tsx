@@ -81,6 +81,42 @@ const Services = () => {
             </Card>
           ))}
         </div>
+
+        {/* Our Departments */}
+        <div className="mt-24">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
+              Our Departments
+            </h3>
+            <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              Dussur operates through three main parallel lines - Design, Production, and Marketing - supported by specialized departments that ensure comprehensive market analysis and competitive positioning.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              "Design Department",
+              "Production Department", 
+              "Publishing Department",
+              "Media Department",
+              "Marketing Studies Department",
+              "Digital Marketing Department",
+              "Exhibitions & Conferences Department"
+            ].map((dept, index) => (
+              <div
+                key={index}
+                className="bg-primary/5 p-6 rounded-xl text-center border border-primary/10 hover:border-primary/20 transition-all duration-300 group"
+              >
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors duration-300">
+                  <span className="text-primary font-bold text-lg">{index + 1}</span>
+                </div>
+                <h4 className="font-semibold text-foreground text-sm leading-tight">
+                  {dept}
+                </h4>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
