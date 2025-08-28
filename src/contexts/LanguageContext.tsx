@@ -308,6 +308,51 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     if (key === 'hero.stats.clients') {
       return language === 'en' ? 'Happy Clients' : 'عميل سعيد';
     }
+    if (key === 'services.values.innovation') {
+      return language === 'en' ? 'Innovation & Creativity' : 'الابتكار والإبداع';
+    }
+    if (key === 'services.values.quality') {
+      return language === 'en' ? 'Quality & Excellence' : 'الجودة والتميز';
+    }
+    if (key === 'services.values.results') {
+      return language === 'en' ? 'Results & Impact' : 'النتائج والتأثير';
+    }
+    if (key === 'services.process.title') {
+      return language === 'en' ? 'Our Process' : 'عملنا';
+    }
+    if (key === 'services.process.research') {
+      return language === 'en' ? 'Research' : 'البحث';
+    }
+    if (key === 'services.process.design') {
+      return language === 'en' ? 'Design' : 'التصميم';
+    }
+    if (key === 'services.process.execute') {
+      return language === 'en' ? 'Execute' : 'التنفيذ';
+    }
+    if (key === 'services.process.deliver') {
+      return language === 'en' ? 'Deliver' : 'التسليم';
+    }
+    if (key === 'services.mainLines.title') {
+      return language === 'en' ? 'Our Main Lines' : 'خطوطنا الرئيسية';
+    }
+    if (key === 'services.mainLines.design.title') {
+      return language === 'en' ? 'Design' : 'التصميم';
+    }
+    if (key === 'services.mainLines.design.desc') {
+      return language === 'en' ? 'Creative visualization & brand identity' : 'التصور الإبداعي وهوية العلامة التجارية';
+    }
+    if (key === 'services.mainLines.production.title') {
+      return language === 'en' ? 'Production' : 'الإنتاج';
+    }
+    if (key === 'services.mainLines.production.desc') {
+      return language === 'en' ? 'Quality manufacturing & execution' : 'التصنيع عالي الجودة والتنفيذ';
+    }
+    if (key === 'services.mainLines.marketing.title') {
+      return language === 'en' ? 'Marketing' : 'التسويق';
+    }
+    if (key === 'services.mainLines.marketing.desc') {
+      return language === 'en' ? 'Strategic positioning' : 'الموضع الاستراتيجي';
+    }
     if (key === 'team.title') {
       return language === 'en' ? 'Our Team' : 'فريقنا';
     }
@@ -525,7 +570,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
       return language === 'en' ? 'Modern advertising workspace' : 'مساحة عمل إعلانية حديثة';
     }
     if (key === 'hero.description') {
-      return language === 'en' ? 'We craft compelling stories that elevate your brand and drive meaningful connections with your audience.' : 'نحن نصوغ قصصاً مقنعة ترفع من علامتك التجارية وتقود اتصالات هادفة مع جمهورك.';
+      return language === 'en' ? 'We craft compelling stories that elevate your brand and drive meaningful connections.' : 'نحن نصوغ قصصاً مقنعة ترفع من علامتك التجارية وتقود اتصالات هادفة.';
     }
     if (key === 'hero.badge') {
       return language === 'en' ? 'Leading Advertising Agency' : 'وكالة إعلانية رائدة';
