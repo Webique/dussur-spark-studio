@@ -83,9 +83,14 @@ export default function Hero({ activeSection, setActiveSection }: HeroProps) {
               <Button
                 key={item.id}
                 onClick={() => {
-                  if (setActiveSection) setActiveSection(item.id);
-                  const el = document.getElementById(item.id);
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  if (setActiveSection) {
+                    // Tab-like behavior for Home page
+                    setActiveSection(item.id);
+                  } else {
+                    // Scroll behavior for other pages
+                    const el = document.getElementById(item.id);
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }
                 }}
                 variant={activeSection === item.id ? "default" : "ghost"}
                 className={`px-4 md:px-6 py-2 md:py-3 text-sm md:text-base font-medium transition-all duration-300 ${
