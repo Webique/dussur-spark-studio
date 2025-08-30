@@ -2,11 +2,14 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Languages, Menu, X } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const { language, toggleLanguage, t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,11 +20,8 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
+  const navigateToPage = (route: string) => {
+    navigate(route);
     setIsMobileMenuOpen(false);
   };
 
@@ -33,9 +33,12 @@ export default function Navbar() {
   };
 
   const navItems = [
-    { id: 'about', name: language === 'en' ? 'Who We Are' : 'من نحن' },
-    { id: 'services', name: language === 'en' ? 'Our Departments' : 'أقسامنا' },
-    { id: 'contact', name: language === 'en' ? 'Contact' : 'اتصل بنا' },
+    { id: 'hero', route: '/home', name: language === 'en' ? 'Home' : 'الرئيسية' },
+    { id: 'about', route: '/about', name: language === 'en' ? 'Who We Are' : 'من نحن' },
+    { id: 'services', route: '/services', name: language === 'en' ? 'Our Departments' : 'أقسامنا' },
+    { id: 'team', route: '/team', name: language === 'en' ? 'Our Team' : 'فريقنا' },
+    { id: 'stats', route: '/stats', name: language === 'en' ? 'Our Stats' : 'إحصائياتنا' },
+    { id: 'contact', route: '/contact', name: language === 'en' ? 'Contact' : 'اتصل بنا' },
   ];
 
   return (
@@ -49,19 +52,48 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-20 md:h-24">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <img
-                src="/lovable-uploads/6c856bd6-386c-41d3-98f0-88663266e825.png"
-                alt="Dussur Advertising Agency"
-                className="h-16 md:h-20 w-auto"
-              />
+              <button onClick={() => navigate('/')} className="hover:opacity-80 transition-opacity">
+                <img
+                  src="/lovable-uploads/6c856bd6-386c-41d3-98f0-88663266e825.png"
+                  alt="Dussur Advertising Agency"
+                  className="h-16 md:h-20 w-auto"
+                />
+              </button>
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden lg:flex items-center space-x-10">
               {navItems.map((item) => (
                 <button
                   key={item.id}
-                  onClick={() => scrollToSection(item.id)}
+                  onClick={() => navigateToPage(item.route)}
+                  className={`text-sm font-medium transition-all duration-300 hover:scale-105 relative group ${
+                    location.pathname === item.route
+                      ? 'text-blue-600'
+                      : isScrolled 
+                        ? 'text-gray-700 hover:text-blue-600' 
+                        : 'text-white/90 hover:text-white'
+                  }`}
+                >
+                  {item.name}
+                  {/* Hover underline effect */}
+                  <span className={`absolute -bottom-1 left-0 h-0.5 transition-all duration-300 ${
+                    location.pathname === item.route
+                      ? 'w-full bg-blue-600'
+                      : 'w-0 group-hover:w-full bg-current'
+                  } ${
+                    isScrolled ? 'bg-blue-600' : 'bg-white'
+                  }`}></span>
+                </button>
+              ))}
+            </div>
+
+            {/* Medium Screen Navigation (shorter list) */}
+            <div className="hidden md:flex lg:hidden items-center space-x-6">
+              {navItems.slice(0, 4).map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => navigateToPage(item.route)}
                   className={`text-sm font-medium transition-all duration-300 hover:scale-105 relative group ${
                     isScrolled 
                       ? 'text-gray-700 hover:text-blue-600' 
@@ -75,6 +107,35 @@ export default function Navbar() {
                   }`}></span>
                 </button>
               ))}
+              
+              {/* More dropdown for medium screens */}
+              <div className="relative group">
+                <button
+                  className={`text-sm font-medium transition-all duration-300 hover:scale-105 relative ${
+                    isScrolled 
+                      ? 'text-gray-700 hover:text-blue-600' 
+                      : 'text-white/90 hover:text-white'
+                  }`}
+                >
+                  {language === 'en' ? 'More' : 'المزيد'}
+                  <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-current transition-all duration-300 group-hover:w-full ${
+                    isScrolled ? 'bg-blue-600' : 'bg-white'
+                  }`}></span>
+                </button>
+                
+                {/* Dropdown menu */}
+                <div className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 min-w-32">
+                  {navItems.slice(4).map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => navigateToPage(item.route)}
+                      className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg"
+                    >
+                      {item.name}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* Desktop Actions */}
@@ -146,7 +207,7 @@ export default function Navbar() {
                 {navItems.map((item) => (
                   <button
                     key={item.id}
-                    onClick={() => scrollToSection(item.id)}
+                    onClick={() => navigateToPage(item.route)}
                     className="w-full text-left px-4 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200"
                   >
                     {item.name}

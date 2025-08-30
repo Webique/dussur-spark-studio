@@ -1,15 +1,10 @@
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Services from "@/components/Services";
-import Team from "@/components/Team";
-import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 
-export default function Index() {
+export default function Stats() {
   const { language } = useLanguage();
   
   const openWhatsApp = () => {
@@ -29,20 +24,7 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <main>
-        <section id="hero">
-          <Hero />
-        </section>
-        <section id="about">
-          <About />
-        </section>
-        <section id="services">
-          <Services />
-        </section>
-        <section id="team">
-          <Team />
-        </section>
-        
+      <main className="pt-8">
         {/* Stats Section */}
         <section id="stats" className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
@@ -101,12 +83,8 @@ export default function Index() {
             </div>
           </div>
         </section>
-        
-        <section id="contact">
-          <Contact />
-        </section>
       </main>
       <Footer />
     </div>
   );
-}
+} 

@@ -5,7 +5,7 @@ export default function Services() {
   const { t, language } = useLanguage();
 
   return (
-    <section id="services" className="py-16 md:py-24 bg-gray-50">
+    <section className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Specialized Departments */}
         <div>

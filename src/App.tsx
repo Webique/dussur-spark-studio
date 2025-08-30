@@ -3,6 +3,12 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import Index from "@/pages/Index";
+import Home from "@/pages/Home";
+import About from "@/pages/About";
+import Services from "@/pages/Services";
+import Team from "@/pages/Team";
+import Stats from "@/pages/Stats";
+import Contact from "@/pages/Contact";
 import NotFound from "@/pages/NotFound";
 import LoadingScreen from "@/components/LoadingScreen";
 import { useState, useEffect } from "react";
@@ -36,6 +42,12 @@ const App = () => {
           <Router>
             <Routes>
               <Route path="/" element={<Index />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/team" element={<Team />} />
+              <Route path="/stats" element={<Stats />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Router>

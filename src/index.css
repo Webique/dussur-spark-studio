@@ -4,6 +4,18 @@
 
 html {
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
 }
 
 /* Basic RTL support for Arabic */

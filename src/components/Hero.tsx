@@ -21,7 +21,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-24">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
@@ -45,8 +45,6 @@ export default function Hero() {
             </p>
           </div>
 
-
-
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-8 md:mb-12 px-4">
             <Button
@@ -67,22 +65,6 @@ export default function Hero() {
               <Play className="mr-2 h-4 w-4 md:h-5 md:w-5" />
               {t('hero.watchStory')}
             </Button>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto px-4">
-            <div className="text-center p-3 md:p-4 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 md:mb-2">500+</div>
-              <div className="text-white/70 text-xs sm:text-sm uppercase tracking-wider">{t('hero.stats.projects')}</div>
-            </div>
-            <div className="text-center p-3 md:p-4 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 md:mb-2">15+</div>
-              <div className="text-white/70 text-xs sm:text-sm uppercase tracking-wider">{t('hero.stats.years')}</div>
-            </div>
-            <div className="text-center p-3 md:p-4 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 md:mb-2">50+</div>
-              <div className="text-white/70 text-xs sm:text-sm uppercase tracking-wider">{t('hero.stats.clients')}</div>
-            </div>
           </div>
         </div>
       </div>
