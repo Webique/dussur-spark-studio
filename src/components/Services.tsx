@@ -1,12 +1,23 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Paintbrush, BookOpen, Radio, Calendar, Megaphone, TrendingUp } from "lucide-react";
+import creativeWorkspace from "@/assets/creative-workspace.jpg";
 
 export default function Services() {
   const { t, language } = useLanguage();
 
   return (
-    <section className="py-16 md:py-24 bg-gray-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 md:py-24 relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img
+          src={creativeWorkspace}
+          alt="Creative Workspace"
+          className="w-full h-full object-cover opacity-8"
+        />
+        <div className="absolute inset-0 bg-gray-50/95"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Hero Image Section */}
         <div className="text-center mb-12">
           <div className="relative max-w-4xl mx-auto mb-8">

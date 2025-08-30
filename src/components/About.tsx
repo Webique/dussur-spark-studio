@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import strategyBackground from "@/assets/strategy-background.jpg";
+import successAbstract from "@/assets/success-abstract.jpg";
 
 export default function About() {
   const { t, language } = useLanguage();
@@ -9,8 +11,18 @@ export default function About() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-      <div className="container mx-auto px-4">
+    <section className="py-20 relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img
+          src={strategyBackground}
+          alt="Strategy Background"
+          className="w-full h-full object-cover opacity-10"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50/90 to-white/90"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         {/* Hero Image with Eagle */}
         <div className="text-center mb-12">
           <div className="relative max-w-2xl mx-auto mb-8">
@@ -66,8 +78,16 @@ export default function About() {
           </div>
 
           {/* Bottom Section - Company Philosophy */}
-          <div className="text-center">
-            <div className="bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-gray-200">
+          <div className="text-center relative">
+            {/* Background decorative image */}
+            <div className="absolute inset-0 opacity-5 rounded-2xl overflow-hidden">
+              <img
+                src={successAbstract}
+                alt="Success Abstract"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="bg-white/80 backdrop-blur-sm p-8 md:p-12 rounded-2xl shadow-xl border border-gray-200 relative z-10">
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
                 {t('about.description3')}
               </p>

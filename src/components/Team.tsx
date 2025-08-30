@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Users, Award, Lightbulb, Target } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import teamCollaboration from "@/assets/team-collaboration.jpg";
 
 const Team = () => {
   const { t } = useLanguage();
@@ -29,8 +30,18 @@ const Team = () => {
   ];
 
   return (
-    <section className="py-24 bg-accent/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img
+          src={teamCollaboration}
+          alt="Team Collaboration"
+          className="w-full h-full object-cover opacity-10"
+        />
+        <div className="absolute inset-0 bg-accent/20"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
             {t('team.title')}

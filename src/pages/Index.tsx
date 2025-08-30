@@ -9,6 +9,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
+import successAbstract from "@/assets/success-abstract.jpg";
 
 export default function Index() {
   useScrollToTop();
@@ -46,8 +47,18 @@ export default function Index() {
         </section>
         
         {/* Stats Section */}
-        <section id="stats" className="py-20 bg-gray-50">
-          <div className="container mx-auto px-4">
+        <section id="stats" className="py-20 relative overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <img
+              src={successAbstract}
+              alt="Success Background"
+              className="w-full h-full object-cover opacity-20"
+            />
+            <div className="absolute inset-0 bg-gray-50/90"></div>
+          </div>
+          
+          <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 {language === 'en' ? 'Start Your Project' : 'ابدأ مشروعك'}
@@ -80,24 +91,30 @@ export default function Index() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">500+</div>
-                <div className="text-lg text-gray-700">
-                  {language === 'en' ? 'Projects Completed' : 'مشروع مكتمل'}
+              <div className="text-center group">
+                <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                  <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2 group-hover:text-blue-700 transition-colors">500+</div>
+                  <div className="text-lg text-gray-700">
+                    {language === 'en' ? 'Projects Completed' : 'مشروع مكتمل'}
+                  </div>
                 </div>
               </div>
               
-              <div className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">15+</div>
-                <div className="text-lg text-gray-700">
-                  {language === 'en' ? 'Years Experience' : 'سنوات خبرة'}
+              <div className="text-center group">
+                <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                  <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2 group-hover:text-blue-700 transition-colors">15+</div>
+                  <div className="text-lg text-gray-700">
+                    {language === 'en' ? 'Years Experience' : 'سنوات خبرة'}
+                  </div>
                 </div>
               </div>
               
-              <div className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">50+</div>
-                <div className="text-lg text-gray-700">
-                  {language === 'en' ? 'Happy Clients' : 'عميل سعيد'}
+              <div className="text-center group">
+                <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                  <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2 group-hover:text-blue-700 transition-colors">50+</div>
+                  <div className="text-lg text-gray-700">
+                    {language === 'en' ? 'Happy Clients' : 'عميل سعيد'}
+                  </div>
                 </div>
               </div>
             </div>

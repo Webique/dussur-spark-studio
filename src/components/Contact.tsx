@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Phone, MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import contactPattern from "@/assets/contact-pattern.jpg";
 
 const Contact = () => {
   const { t } = useLanguage();
@@ -32,8 +33,18 @@ const Contact = () => {
   ];
 
   return (
-    <section className="py-24 bg-secondary/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0">
+        <img
+          src={contactPattern}
+          alt="Contact Pattern"
+          className="w-full h-full object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-secondary/40"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Hero Image */}
         <div className="text-center mb-12">
           <div className="relative max-w-3xl mx-auto mb-8">
@@ -61,8 +72,8 @@ const Contact = () => {
             {contactInfo.map((item, index) => (
               <Card 
                 key={index} 
-                className={`p-6 border-border/50 bg-card/50 backdrop-blur-sm ${
-                  item.clickable ? 'cursor-pointer hover:shadow-lg transition-all duration-300' : ''
+                className={`p-6 border-border/50 bg-card/80 backdrop-blur-md ${
+                  item.clickable ? 'cursor-pointer hover:shadow-lg transition-all duration-300 hover:scale-105' : ''
                 }`}
                 onClick={item.onClick}
               >
