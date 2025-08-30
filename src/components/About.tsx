@@ -11,6 +11,17 @@ export default function About() {
   return (
     <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
       <div className="container mx-auto px-4">
+        {/* Hero Image with Eagle */}
+        <div className="text-center mb-12">
+          <div className="relative max-w-2xl mx-auto mb-8">
+            <img
+              src="/lovable-uploads/87059cd4-17e1-4caa-814a-d981a9a4508e.png"
+              alt="Soaring Eagle - Symbol of Vision and Excellence"
+              className="w-full h-48 md:h-64 object-contain"
+            />
+          </div>
+        </div>
+
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">

@@ -34,6 +34,18 @@ const Contact = () => {
   return (
     <section className="py-24 bg-secondary/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Hero Image */}
+        <div className="text-center mb-12">
+          <div className="relative max-w-3xl mx-auto mb-8">
+            <img
+              src="/lovable-uploads/80cedb68-a363-4005-a2e1-fa4b8c806874.png"
+              alt="Modern Workspace - Ready to Connect"
+              className="w-full h-48 md:h-64 object-cover rounded-2xl shadow-lg"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+          </div>
+        </div>
+
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
             {t('contact.title')}

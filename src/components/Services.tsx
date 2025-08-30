@@ -7,6 +7,18 @@ export default function Services() {
   return (
     <section className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Hero Image Section */}
+        <div className="text-center mb-12">
+          <div className="relative max-w-4xl mx-auto mb-8">
+            <img
+              src="/lovable-uploads/bf37207f-07d6-4162-bc06-44866dd7550a.png"
+              alt="Marketing Strategy Concepts"
+              className="w-full h-64 md:h-80 object-cover rounded-lg shadow-lg"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-lg"></div>
+          </div>
+        </div>
+
         {/* Specialized Departments */}
         <div>
           <h3 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-8 md:mb-12">
@@ -47,7 +59,8 @@ export default function Services() {
                 icon: <BookOpen className="h-6 w-6 text-gray-600" />,
                 desc: language === 'en'
                   ? 'Producing high-quality publications and distinctive magazines that reflect clients\' identities.'
-                  : 'إنتاج مطبوعات راقية ومجلات مميزة تعكس هوية العملاء.'
+                  : 'إنتاج مطبوعات راقية ومجلات مميزة تعكس هوية العملاء.',
+                image: "/lovable-uploads/795f4c1d-2f8e-4c17-bbb9-317dc039b601.png"
               },
               { 
                 name: language === 'en' ? 'Media Production Department' : 'قسم الإنتاج الإعلامي',
@@ -57,7 +70,18 @@ export default function Services() {
                   : 'تصوير وإخراج الإعلانات المرئية والمسموعة باحترافية.'
               }
             ].map((dept, index) => (
-              <div key={index} className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
+              <div key={index} className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden">
+                {/* Image for specific departments */}
+                {dept.image && (
+                  <div className="h-32 overflow-hidden">
+                    <img
+                      src={dept.image}
+                      alt={dept.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                )}
+                
                 {/* Header with number and icon */}
                 <div className="flex items-center justify-between p-4 border-b border-gray-100">
                   <div className="flex items-center space-x-3">
