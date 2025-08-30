@@ -32,19 +32,9 @@ export default function About() {
 
         <div className="max-w-6xl mx-auto">
           {/* Main Content */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start mb-16">
-            {/* Eagle Image */}
-            <div className="lg:col-span-1 flex justify-center">
-              <div className="relative max-w-xs">
-                <img
-                  src="/lovable-uploads/87059cd4-17e1-4caa-814a-d981a9a4508e.png"
-                  alt="Soaring Eagle - Symbol of Vision and Excellence"
-                  className="w-full h-32 md:h-40 object-contain"
-                />
-              </div>
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mb-16">
             {/* Company Story */}
-            <div className="lg:col-span-1 space-y-6">
+            <div className="space-y-6">
               <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   {language === 'en' ? 'Our Story' : 'قصتنا'}
@@ -56,7 +46,7 @@ export default function About() {
             </div>
 
             {/* Services List */}
-            <div className="lg:col-span-1 space-y-6">
+            <div className="space-y-6">
               <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">
                   {language === 'en' ? 'Our Services' : 'خدماتنا'}
