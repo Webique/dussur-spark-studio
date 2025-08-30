@@ -26,7 +26,7 @@ export default function Hero({ activeSection, setActiveSection }: HeroProps) {
   };
 
   return (
-    <section className="relative h-[70vh] md:h-[80vh] flex items-center justify-center overflow-hidden pt-20 md:pt-24">
+    <section className="relative min-h-[80vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden pt-20 md:pt-24 pb-8">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
@@ -41,21 +41,21 @@ export default function Hero({ activeSection, setActiveSection }: HeroProps) {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Main Heading */}
-          <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          <div className="text-center mb-6 md:mb-8">
+            <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-tight">
               {t('hero.title')}
             </h1>
-            <p className="text-lg md:text-xl lg:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base md:text-xl lg:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed mb-4 md:mb-6">
               {t('hero.subtitle')}
             </p>
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-8 md:mb-12 px-4">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-6 md:mb-8 px-4">
             <Button
               onClick={openWhatsApp}
               size="lg"
-              className="w-full sm:w-auto bg-white text-gray-900 hover:bg-white/90 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold rounded-lg"
+              className="w-full sm:w-auto bg-white text-gray-900 hover:bg-white/90 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 px-4 md:px-8 py-2 md:py-4 text-sm md:text-lg font-semibold rounded-lg"
             >
               {t('hero.startProject')}
               <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
@@ -65,7 +65,7 @@ export default function Hero({ activeSection, setActiveSection }: HeroProps) {
               onClick={scrollToAbout}
               variant="outline"
               size="lg"
-              className="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold transition-all duration-300 hover:scale-105 rounded-lg"
+              className="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-gray-900 px-4 md:px-8 py-2 md:py-4 text-sm md:text-lg font-semibold transition-all duration-300 hover:scale-105 rounded-lg"
             >
               <Play className="mr-2 h-4 w-4 md:h-5 md:w-5" />
               {t('hero.watchStory')}
@@ -73,7 +73,7 @@ export default function Hero({ activeSection, setActiveSection }: HeroProps) {
           </div>
 
           {/* Navigation Tabs */}
-          <div className="flex flex-wrap justify-center gap-2 md:gap-3 mt-8">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3 mt-4 md:mt-8">
             {[
               { id: "about", label: t('nav.about') },
               { id: "services", label: t('nav.services') },
