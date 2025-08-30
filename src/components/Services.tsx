@@ -1,6 +1,12 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Paintbrush, BookOpen, Radio, Calendar, Megaphone, TrendingUp } from "lucide-react";
 import creativeWorkspace from "@/assets/creative-workspace.jpg";
+import deptConferences from "@/assets/dept-conferences.jpg";
+import deptAdvertising from "@/assets/dept-advertising.jpg";
+import deptMarketing from "@/assets/dept-marketing-strategy.jpg";
+import deptBranding from "@/assets/dept-branding.jpg";
+import deptPublications from "@/assets/dept-publications.jpg";
+import deptMediaProduction from "@/assets/dept-media-production.jpg";
 
 export default function Services() {
   const { t, language } = useLanguage();
@@ -42,28 +48,32 @@ export default function Services() {
                 icon: <Calendar className="h-6 w-6 text-gray-600" />,
                 desc: language === 'en' 
                   ? 'Planning and executing events with the highest standards of professionalism.'
-                  : 'تخطيط وتنفيذ الفعاليات بأعلى معايير الاحترافية.'
+                  : 'تخطيط وتنفيذ الفعاليات بأعلى معايير الاحترافية.',
+                image: deptConferences
               },
               { 
                 name: language === 'en' ? 'Advertising Department' : 'قسم الدعاية والإعلان',
                 icon: <Megaphone className="h-6 w-6 text-gray-600" />,
                 desc: language === 'en'
                   ? 'Designing and managing innovative advertising campaigns across various channels.'
-                  : 'تصميم وإدارة الحملات الإعلانية المبتكرة بمختلف الوسائل.'
+                  : 'تصميم وإدارة الحملات الإعلانية المبتكرة بمختلف الوسائل.',
+                image: deptAdvertising
               }, 
               { 
                 name: language === 'en' ? 'Marketing Department' : 'قسم التسويق',
                 icon: <TrendingUp className="h-6 w-6 text-gray-600" />,
                 desc: language === 'en'
                   ? 'Developing smart marketing strategies that strengthen brand presence.'
-                  : 'ابتكار استراتيجيات تسويقية ذكية تدعم انتشار العلامات التجارية.'
+                  : 'ابتكار استراتيجيات تسويقية ذكية تدعم انتشار العلامات التجارية.',
+                image: deptMarketing
               },
               { 
                 name: language === 'en' ? 'Visual Identity & Design Department' : 'قسم الهوية البصرية والتصميم',
                 icon: <Paintbrush className="h-6 w-6 text-gray-600" />,
                 desc: language === 'en'
                   ? 'Creating powerful and creative visual identities.'
-                  : 'ابتكار هويات بصرية قوية وإبداعية.'
+                  : 'ابتكار هويات بصرية قوية وإبداعية.',
+                image: deptBranding
               },
               { 
                 name: language === 'en' ? 'Publications & Magazines Department' : 'قسم المطبوعات والمجلات',
@@ -71,27 +81,27 @@ export default function Services() {
                 desc: language === 'en'
                   ? 'Producing high-quality publications and distinctive magazines that reflect clients\' identities.'
                   : 'إنتاج مطبوعات راقية ومجلات مميزة تعكس هوية العملاء.',
-                image: "/lovable-uploads/795f4c1d-2f8e-4c17-bbb9-317dc039b601.png"
+                image: deptPublications
               },
               { 
                 name: language === 'en' ? 'Media Production Department' : 'قسم الإنتاج الإعلامي',
                 icon: <Radio className="h-6 w-6 text-gray-600" />,
                 desc: language === 'en'
                   ? 'Filming and producing audiovisual advertisements with professionalism.'
-                  : 'تصوير وإخراج الإعلانات المرئية والمسموعة باحترافية.'
+                  : 'تصوير وإخراج الإعلانات المرئية والمسموعة باحترافية.',
+                image: deptMediaProduction
               }
             ].map((dept, index) => (
-              <div key={index} className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden">
-                {/* Image for specific departments */}
-                {dept.image && (
-                  <div className="h-32 overflow-hidden">
-                    <img
-                      src={dept.image}
-                      alt={dept.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                )}
+              <div key={index} className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden group">
+                {/* Department Image */}
+                <div className="h-40 overflow-hidden relative">
+                  <img
+                    src={dept.image}
+                    alt={dept.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
                 
                 {/* Header with number and icon */}
                 <div className="flex items-center justify-between p-4 border-b border-gray-100">
