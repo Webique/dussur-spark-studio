@@ -73,7 +73,7 @@ export default function Hero({ activeSection, setActiveSection }: HeroProps) {
           </div>
 
           {/* Navigation Tabs */}
-          {setActiveSection && activeSection && (
+          {setActiveSection && (
             <div className="flex flex-wrap justify-center gap-2 md:gap-3 mt-8">
               {[
                 { id: "about", label: t('nav.about') },
