@@ -3,8 +3,10 @@ import Navbar from "@/components/Navbar";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
+import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 export default function Stats() {
+  useScrollToTop();
   const { language } = useLanguage();
   
   const openWhatsApp = () => {
