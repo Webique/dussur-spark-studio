@@ -10,10 +10,27 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import successAbstract from "@/assets/success-abstract.jpg";
+import { useState } from "react";
 
 export default function Index() {
   useScrollToTop();
   const { language } = useLanguage();
+  const [activeSection, setActiveSection] = useState("about");
+
+  const renderActiveSection = () => {
+    switch (activeSection) {
+      case "about":
+        return <About />;
+      case "services":
+        return <Services />;
+      case "team":
+        return <Team />;
+      case "contact":
+        return <Contact />;
+      default:
+        return <About />;
+    }
+  };
   
   const openWhatsApp = () => {
     const phoneNumber = "+966544435856";
@@ -34,16 +51,10 @@ export default function Index() {
       <Navbar />
       <main>
         <section id="hero">
-          <Hero />
+          <Hero activeSection={activeSection} setActiveSection={setActiveSection} />
         </section>
-        <section id="about">
-          <About />
-        </section>
-        <section id="services">
-          <Services />
-        </section>
-        <section id="team">
-          <Team />
+        <section id="content" className="min-h-screen">
+          {renderActiveSection()}
         </section>
         
         {/* Stats Section */}
@@ -121,9 +132,6 @@ export default function Index() {
           </div>
         </section>
         
-        <section id="contact">
-          <Contact />
-        </section>
       </main>
       <Footer />
     </div>
