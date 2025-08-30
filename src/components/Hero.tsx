@@ -32,7 +32,7 @@ export default function Hero({ activeSection, setActiveSection }: HeroProps) {
         <img
           src={heroImage}
           alt="Modern advertising workspace"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-black/60"></div>
       </div>
