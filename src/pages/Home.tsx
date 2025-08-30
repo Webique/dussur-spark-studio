@@ -16,10 +16,10 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState("about");
 
   const navigationItems = [
-    { id: "about", label: t('navbar.about') },
-    { id: "services", label: t('navbar.services') },
-    { id: "team", label: t('navbar.team') },
-    { id: "contact", label: t('navbar.contact') }
+    { id: "about", label: t('nav.about') },
+    { id: "services", label: t('nav.services') },
+    { id: "team", label: t('nav.team') },
+    { id: "contact", label: t('nav.contact') }
   ];
 
   const renderActiveSection = () => {
@@ -43,30 +43,8 @@ export default function Home() {
       <main className="pt-0">
         {/* Hero Section - Always Visible */}
         <section id="hero">
-          <Hero />
+          <Hero activeSection={activeSection} setActiveSection={setActiveSection} />
         </section>
-
-        {/* Navigation Tabs Under Hero */}
-        <div className="bg-background border-b border-border sticky top-20 z-40">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-wrap justify-center gap-2 py-4">
-              {navigationItems.map((item) => (
-                <Button
-                  key={item.id}
-                  onClick={() => setActiveSection(item.id)}
-                  variant={activeSection === item.id ? "default" : "ghost"}
-                  className={`px-6 py-3 text-sm md:text-base font-medium transition-all duration-300 ${
-                    activeSection === item.id
-                      ? "bg-primary text-primary-foreground shadow-md"
-                      : "hover:bg-muted text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  {item.label}
-                </Button>
-              ))}
-            </div>
-          </div>
-        </div>
 
         {/* Dynamic Content Section */}
         <section id="content" className="min-h-screen">

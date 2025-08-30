@@ -3,7 +3,12 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
 
-export default function Hero() {
+interface HeroProps {
+  activeSection?: string;
+  setActiveSection?: (section: string) => void;
+}
+
+export default function Hero({ activeSection, setActiveSection }: HeroProps) {
   const { t } = useLanguage();
 
   const openWhatsApp = () => {
@@ -66,6 +71,31 @@ export default function Hero() {
               {t('hero.watchStory')}
             </Button>
           </div>
+
+          {/* Navigation Tabs */}
+          {setActiveSection && activeSection && (
+            <div className="flex flex-wrap justify-center gap-2 md:gap-3 mt-8">
+              {[
+                { id: "about", label: t('nav.about') },
+                { id: "services", label: t('nav.services') },
+                { id: "team", label: t('nav.team') },
+                { id: "contact", label: t('nav.contact') }
+              ].map((item) => (
+                <Button
+                  key={item.id}
+                  onClick={() => setActiveSection(item.id)}
+                  variant={activeSection === item.id ? "default" : "ghost"}
+                  className={`px-4 md:px-6 py-2 md:py-3 text-sm md:text-base font-medium transition-all duration-300 ${
+                    activeSection === item.id
+                      ? "bg-white text-gray-900 shadow-md hover:bg-white/90"
+                      : "border border-white/30 text-white hover:bg-white/20 hover:border-white/50"
+                  }`}
+                >
+                  {item.label}
+                </Button>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
